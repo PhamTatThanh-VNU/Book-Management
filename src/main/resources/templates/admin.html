@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Shelf - Admin</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .navbar {
+      background-color: #5a3e36;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-family: 'EB Garamond', serif;
+      font-size: 24px;
+    }
+
+    .navbar-brand:hover {
+      color: #b5651d;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      font-weight: 500;
+      margin-right: 20px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #b5651d;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .icon-btn {
+      margin-right: 10px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .dashboard-container {
+      padding: 30px;
+    }
+
+    .card-section {
+      background: white;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card-section:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-section .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      color: #5a3e36;
+      font-weight: 600;
+    }
+
+    .card a {
+      font-weight: bold;
+      color: #5a3e36;
+    }
+
+    .card a:hover {
+      color: #b5651d;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Book Shelf - Admin</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#manage-books">Quản lý Sách</a></li>
+          <li class="nav-item"><a class="nav-link" href="#search-books">Tìm kiếm Sách</a></li>
+          <li class="nav-item"><a class="nav-link" href="#manage-borrow">Quản lý Mượn Sách</a></li>
+          <li class="nav-item"><a class="nav-link" href="#add-book">Thêm Sách</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="dashboard-container">
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card card-section">
+        <div class="card-body">
+          <h3 class="card-title">Quản lý Sách</h3>
+          <p>Thêm, xóa, và chỉnh sửa thông tin sách trong hệ thống.</p>
+          <a href="#manage-books" class="btn btn-outline-primary">Quản lý Sách</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-section">
+        <div class="card-body">
+          <h3 class="card-title">Tìm kiếm Sách</h3>
+          <p>Tìm kiếm các cuốn sách theo tên, tác giả, thể loại, và hơn nữa.</p>
+          <a href="#search-books" class="btn btn-outline-primary">Tìm kiếm Sách</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-section">
+        <div class="card-body">
+          <h3 class="card-title">Quản lý Mượn Sách</h3>
+          <p>Quản lý các yêu cầu mượn sách và theo dõi trạng thái sách mượn.</p>
+          <a href="#manage-borrow" class="btn btn-outline-primary">Quản lý Mượn Sách</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-section">
+        <div class="card-body">
+          <h3 class="card-title">Thêm Sách Mới</h3>
+          <p>Thêm sách mới vào thư viện và cung cấp thông tin chi tiết.</p>
+          <a href="#add-book" class="btn btn-outline-primary">Thêm Sách</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

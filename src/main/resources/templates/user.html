@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookShelf - User Dashboard</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f9f9f9;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .navbar {
+      background-color: #5a3e36;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-family: 'EB Garamond', serif;
+      font-size: 24px;
+    }
+
+    .navbar-brand:hover {
+      color: #b5651d;
+    }
+
+    .search-bar {
+      max-width: 400px;
+    }
+
+    .user-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .book-card {
+      background: white;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-card img {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .filter-section {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-menu a {
+      color: #5a3e36;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f3f3f3;
+      color: #b5651d;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">BookShelf</a>
+      <form class="form-inline my-2 my-lg-0 ml-auto search-bar">
+        <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sách..." aria-label="Search">
+      </form>
+      <div class="dropdown">
+        <img src="img/user.png" alt="User Icon" class="user-icon dropdown-toggle" data-toggle="dropdown">
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">Mượn Sách</a>
+          <a class="dropdown-item" href="#">Sách Đã Mượn</a>
+          <a class="dropdown-item" href="#">Đăng Xuất</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="container mt-4">
+  <div class="row mb-4">
+    <div class="col-md-3">
+      <div class="filter-section">
+        <h5>Phân loại sách</h5>
+        <form>
+          <div class="form-group">
+            <label for="author-select">Tác giả</label>
+            <select id="author-select" class="form-control">
+              <option value="">Chọn tác giả</option>
+              <option>Author 1</option>
+              <option>Author 2</option>
+              <option>Author 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="genre-select">Thể loại</label>
+            <select id="genre-select" class="form-control">
+              <option value="">Chọn thể loại</option>
+              <option>Fiction</option>
+              <option>Science</option>
+              <option>History</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="status-select">Tình trạng</label>
+            <select id="status-select" class="form-control">
+              <option value="">Chọn tình trạng</option>
+              <option>Có sẵn</option>
+              <option>Đã cho mượn</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Lọc Sách</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card book-card">
+            <img src="images/book1.jpg" class="card-img-top" alt="Book Image">
+            <div class="card-body">
+              <h5 class="card-title">Book Title 1</h5>
+              <p class="card-text">Author: Author Name</p>
+              <p class="card-text"><small class="text-muted">Tình trạng: Có sẵn</small></p>
+              <a href="#" class="btn btn-outline-primary btn-block">Mượn Sách</a>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat similar blocks for more books -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
