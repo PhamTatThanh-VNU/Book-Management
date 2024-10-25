@@ -28,6 +28,11 @@ public class UserService {
     public User findByUserName(String username) {
         return userRepository.findByUserName(username);
     }
+    public void updateUser(User user){
+        User userUpdate = userRepository.findByUserName(user.getUsername());
+        userUpdate.setUrlImage(user.getUrlImage());
+        userRepository.save(userUpdate);
+    }
     private void updateUserDetails(User existingUser, User user) {
         existingUser.setUsername(user.getUsername());
         existingUser.setPassword(user.getPassword());

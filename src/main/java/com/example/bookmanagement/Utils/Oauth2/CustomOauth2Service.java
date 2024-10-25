@@ -3,6 +3,7 @@ package com.example.bookmanagement.Utils.Oauth2;
 import com.example.bookmanagement.Model.User;
 import com.example.bookmanagement.Repository.UserRepository;
 import com.example.bookmanagement.Service.ServiceImpl.UserService;
+import com.sun.tools.jconsole.JConsoleContext;
 import lombok.Data;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -27,7 +28,6 @@ public class CustomOauth2Service implements OAuth2UserService<OAuth2UserRequest,
         String username = oAuth2User.getAttribute("email");
         String urlImage = oAuth2User.getAttribute("picture");
 
-
         User user = userService.findByUserName(username);
         if (user == null) {
             user = new User();
@@ -35,6 +35,10 @@ public class CustomOauth2Service implements OAuth2UserService<OAuth2UserRequest,
             user.setUsername(username);
             user.setUrlImage(urlImage);
             userService.save(user);
+        }
+        else{
+            user.setUrlImage(urlImage);
+            userService.updateUser(user);
         }
         return oAuth2User;
     }
